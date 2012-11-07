@@ -1,31 +1,50 @@
 trustedshopsrich
 ================
 
-Test (meine Shop URL eingeben):
-http://www.google.de/webmasters/tools/richsnippets
+renders the xml output of trusted shops as an rich snippet for google to show the rating stars
+in the google search results
 
-Im Template, also da, wo die Bewertungen ausgegeben werden sollen, muss folgendes eingetragen werden:
+Installation: 
 
-PHP-Code:
+  1. Copy complete trustedshopsrich folder into modules folder of your shop
+	2. Activate module "Trustes Shops Rich Snippet" in OXID admin area
+	3. Be Happy :)
+	
+Using in Template: 
+
 [{if $oViewConf->getTsId()}]
     [{$oViewConf->getTrustedShopsRich($oViewConf->getTsId())}]
-[{/if}] 
-                  
-Es wird noch ein zweiter Konfigurationsparameter mit übernommen, 
-so dass verschiedene Formate ausgegeben werden können. Also dann so:
+[{/if}]
+
+Parameters for using different output formats:
 
 [{$oViewConf->getTrustedShopsRich($oViewConf->getTsId(), 2)}]
 
-Kein Parameter zeigt an:
+	no parameter: Dein Shop Name
+	Durchschnittliche Bewertung: 4.89 (von 5). Ermittelt aus 151 Bewertungen.
+	2: Kundenbewertungen von Trusted Shops: 4.89 / 5.00 bei 151 Bewertungen
+	3: debug xml output
+	
+Changelog: 
 
-Dein Shop Name
-Durchschnittliche Bewertung: 4.89 (von 5). Ermittelt aus 151 Bewertungen.
+	v1.0.2: Initial;
 
-Paramter 2:
+Licensing: 
 
-Kundenbewertungen von Trusted Shops: 4.89 / 5.00 bei 151 Bewertungen
+	Dreamride / Christian Bernhard
+	Author: Christian Bernhard
 
-Paramter 3: Debugausgabe.
+	Copyright 2012 
 
-Die Verwendung des Moduls geschieht auf eigene Gefahr. 
-Es wird keinerlei Support angeboten. Eine Demo sieht man in meinem Shop ganz unten.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
