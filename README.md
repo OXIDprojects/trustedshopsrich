@@ -1,0 +1,2 @@
+trustedshopsrich
+================
