@@ -2,13 +2,13 @@ trustedshopsrich
 ================
 
 renders the xml output of trusted shops as an rich snippet for google to show the rating stars
-in the google search results
+within the google search results
 
 Installation: 
 
-  1. Copy complete trustedshopsrich folder into modules folder of your shop
-	2. Activate module "Trustes Shops Rich Snippet" in OXID admin area
-	3. Be Happy :)
+ 1. Copy complete trustedshopsrich folder into modules folder of your shop
+ 2. Activate module "Trustes Shops Rich Snippet" in OXID admin area
+ 3. Be Happy :)
 	
 Using in Template: 
 
