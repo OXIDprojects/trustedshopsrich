@@ -6,19 +6,20 @@ within the google search results
 
 Installation: 
 
- 1. Copy complete trustedshopsrich folder into modules folder of your shop
- 2. Activate module "Trustes Shops Rich Snippet" in OXID admin area
- 3. Be Happy :)
+1. Copy complete trustedshopsrich folder into modules folder of your shop
+2. Activate module "Trustes Shops Rich Snippet" in OXID admin area
+3. Be Happy :)
 	
 Using in Template: 
 
-[{if $oViewConf->getTsId()}]
-    [{$oViewConf->getTrustedShopsRich($oViewConf->getTsId())}]
-[{/if}]
+	[{if $oViewConf->getTsId()}]
+    	    [{$oViewConf->getTrustedShopsRich($oViewConf->getTsId())}]
+ 	[{/if}]
 
 Parameters for using different output formats:
 
-[{$oViewConf->getTrustedShopsRich($oViewConf->getTsId(), 2)}]
+	[{$oViewConf->getTrustedShopsRich($oViewConf->getTsId(), 2)}]
+
 
 	no parameter: Dein Shop Name
 	Durchschnittliche Bewertung: 4.89 (von 5). Ermittelt aus 151 Bewertungen.
