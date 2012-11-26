@@ -1,4 +1,4 @@
- <?php
+<?php
 $aModule = array(
     'id'              => 'trustedshopsrich',
     'title'           => 'Trustes Shops Rich Snippet',
