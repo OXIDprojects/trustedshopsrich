@@ -61,7 +61,6 @@ class trustedshopsrich extends trustedshopsrich_parent
 			default:
 				$htmlOutput = $htmlOutput;
 		}
-			
-	return $htmlOutput;
+		return $htmlOutput;
 	}
 }

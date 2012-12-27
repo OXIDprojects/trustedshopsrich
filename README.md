@@ -28,7 +28,9 @@ Parameters for using different output formats:
 	
 Changelog: 
 
-	v1.0.2: Initial;
+	v1.0.3: Initial;
+	v1.0.4: Added Caching / Thanks to Dave Holloway;
+	v1.0.5: Added DIV's arount module output
 
 Licensing: 
 
