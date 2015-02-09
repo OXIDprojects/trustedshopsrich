@@ -47,7 +47,7 @@ class trustedshopsrich extends trustedshopsrich_parent
 
 		$htmlOutput = '
     <div class="trustedshops">
-      <div class="hreview-aggregate"><div class="item"><span class="fn">' . $sShopTitle . '</span></div><span class="rating">Durchschnittliche Bewertung: <span class="average">' . $average . '</span> (von 5). Ermittelt aus  <span class="votes">' . $count . '</span> Bewertungen. </span></div>
+      <div class="hreview-aggregate"><div class="item"><span class="fn">' . $sShopTitle . '</span></div><span class="rating">Durchschnittliche Bewertung: <span class="average">' . $average . '</span> (von <span class="best">5</span>). Ermittelt aus  <span class="votes">' . $count . '</span> Bewertungen. </span></div>
     </div>';
 
 		$htmlOutput2 = '
