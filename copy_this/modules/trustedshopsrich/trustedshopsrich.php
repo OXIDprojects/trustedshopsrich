@@ -7,21 +7,30 @@ class trustedshopsrich extends trustedshopsrich_parent
 		$oShop = $this->getConfig()->getActiveShop();
 		$sShopTitle = $oShop->oxshops__oxname->getRawValue();
 
-		$cacheFile = getShopBasePath().'tmp/trustedshops.cache';
+        $sConfigCachePath = oxRegistry::getConfig()->getConfigParam('sTSRichCachePath');
 
+		$cachePath = $sConfigCachePath 
+            ? $sConfigCachePath : 
+            oxRegistry::getConfig()->getActiveView()->getViewConfig()->getModulePath('trustedshopsrich') . "cache/";
+        $cacheFile = $cachePath . 'trustedshops.cache';
+       
 		if(file_exists($cacheFile)) {
 			$now = time();
 			$then = filemtime($cacheFile);
-			if($now-$then > 60*60) {
+            
+            $iCnfgExpireTimeSpan = oxRegistry::getConfig()->getConfigParam('iTSRichCacheExpTime');
+            $iExpireTimeSpan = $iCnfgExpireTimeSpan ? $iCnfgExpireTimeSpan : 60 * 60 * 24;  // default is daily
+            
+			if($now-$then > $iExpireTimeSpan) {
 				unlink($cacheFile);
 			} else {
-				$xml = simplexml_load_string(file_get_contents($cacheFile));
+				$aJSON = json_decode(file_get_contents($cacheFile), true);
 			}
 		}
 
 		$sURL = "http://api.trustedshops.com/rest/public/v2/shops/".$tsId."/quality/reviews.json";
 
-		if(!is_object($xml)) {
+		if(!is_array($aJSON)) {
 			if(ini_get('allow_url_fopen')) {
 				file_put_contents($cacheFile, file_get_contents($sURL));
 			} else {
@@ -39,8 +48,6 @@ class trustedshopsrich extends trustedshopsrich_parent
 				curl_close($rCurl);
 			}
 		}
-
-		$aJSON = json_decode(file_get_contents($cacheFile), true);
 
 		if (is_array($aJSON)) {
 			$fMax = "5.00";
